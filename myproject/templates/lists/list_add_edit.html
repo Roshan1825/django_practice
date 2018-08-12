@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Edit Add Page</title>
+</head>
+<body>
+<div class="container">
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="well well-sm">
+      <form id="contact-form" class="form-horizontal" action="{% url 'addEdit' %}" method="POST">
+      {% csrf_token %}
+      <fieldset>
+        <legend class="text-center">Add List</legend>
+        <div id="success-container" class="text-center" style="display:none;">
+          <p class="lead text-success"><span class="glyphicon glyphicon-ok"></span></p>
+          <p class="lead">Your message has been sent successfully!</p>
+        </div>
+
+        <div id="form-container">
+
+          <!-- Name input-->
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="name">Title</label>
+            <div class="col-md-9">
+              <input id="name" name="title" type="text" placeholder="Title" class="form-control">
+            </div>
+          </div>
+
+          <!-- Email input-->
+{#          <div class="form-group">#}
+{#            <label class="col-md-3 control-label" for="email">Your E-mail</label>#}
+{#            <div class="col-md-9">#}
+{#              <input id="email" name="email" type="text" placeholder="Your email" class="form-control">#}
+{#            </div>#}
+{#          </div>#}
+
+          <!-- Message body -->
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="message">Description</label>
+            <div class="col-md-9">
+              <textarea class="form-control" id="message" name="description" placeholder="Please enter the description here..." rows="5"></textarea>
+            </div>
+          </div>
+
+          <!-- Form actions -->
+          <div class="form-group">
+            <div class="col-md-12 text-left" id="spin-area">
+              <button type="submit" class="btn btn-primary btn-lg">Save</button>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>
