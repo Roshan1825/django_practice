@@ -3,8 +3,6 @@ from django.utils import timezone
 import datetime
 from django.contrib.auth.models import User
 
-# Create your models here.
-
 
 class Notes(models.Model):
     title = models.CharField(max_length=100)
@@ -17,6 +15,6 @@ class Notes(models.Model):
         return self.title
 
     def was_recently_updated(self):
-        return self.created_date >= timezone.now() - datetime.timedelta(days=1)
+        return self.created_date >= timezone.now() - datetime.timedelta(days=1)  
 
 
